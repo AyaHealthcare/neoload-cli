@@ -1,7 +1,7 @@
 trigger: none
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-18.04'
 
 parameters:
 - name: neoloadApiUrl
@@ -9,7 +9,7 @@ parameters:
   default: 'https://neoload-api.saas.neotys.com/'
 - name: neoloadToken
   type: string
-  default: '89cab48f24a22b8de0f15dbf0537ca59d0975a9becb27d1b'
+  default: 'specify_token_or_get_it_from_credentials'
 - name: zoneId
   type: string
   default: 'defaultzone'
@@ -30,7 +30,6 @@ jobs:
       script: |
         pip install neoload
         neoload --version
-
   - task: Bash@3
     displayName: Configure the NeoLoad test
     continueOnError: true
@@ -39,8 +38,7 @@ jobs:
       script: |
         neoload login --url ${{parameters.neoloadApiUrl}} ${{parameters.neoloadToken}} \
                 test-settings --zone ${{parameters.zoneId}} --scenario sanityScenario patch "My Azure Test With CLI" \
-                project --path tests/neoload_projects/vptest3/ upload "MySpcae"
-
+                project --path tests/neoload_projects/example_1/ upload "My Azure Test With CLI"
   - task: Bash@3
     displayName: Run the NeoLoad test
     continueOnError: true
@@ -55,7 +53,6 @@ jobs:
                        --external-url-label "Azure CI build $(Build.BuildNumber)" \
                        --description "Azure result description" \
                        "My Azure Test With CLI"
-
   - task: Bash@3
     displayName: Get the junit SLA report
     continueOnError: true
@@ -63,7 +60,6 @@ jobs:
       targetType: 'inline'
       script: |
        neoload test-results --junit-file $(Common.TestResultsDirectory)/neoload-slas.xml junitsla
-
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
