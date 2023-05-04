@@ -52,7 +52,7 @@ jobs:
                        --external-url "$(Build.BuildUri)" \
                        --external-url-label "Azure CI build $(Build.BuildNumber)" \
                        --description "Azure result description" \
-                       "My Azure Test With CLI"
+                       "MySpaceMay4"
   - task: Bash@3
     displayName: Get the junit SLA report
     continueOnError: true
