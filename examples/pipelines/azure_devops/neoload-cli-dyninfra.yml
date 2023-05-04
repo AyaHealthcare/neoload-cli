@@ -39,7 +39,7 @@ jobs:
       script: |
         neoload login --url ${{parameters.neoloadApiUrl}} ${{parameters.neoloadToken}} \
                 test-settings --zone ${{parameters.zoneId}} --scenario sanityScenario patch "My Azure Test With CLI" \
-                project --path tests/vptest3/ upload "AYACONNECT1"
+                project --path tests/neoload_projects/vptest3 upload "MySpcae"
 
   - task: Bash@3
     displayName: Run the NeoLoad test
