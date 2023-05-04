@@ -1,7 +1,7 @@
 trigger: none
 
 pool:
-  vmImage: 'ubuntu-18.04'
+  vmImage: 'ubuntu-latest'
 
 parameters:
 - name: neoloadApiUrl
@@ -9,7 +9,7 @@ parameters:
   default: 'https://neoload-api.saas.neotys.com/'
 - name: neoloadToken
   type: string
-  default: 'specify_token_or_get_it_from_credentials'
+  default: '89cab48f24a22b8de0f15dbf0537ca59d0975a9becb27d1b'
 - name: zoneId
   type: string
   default: 'defaultzone'
