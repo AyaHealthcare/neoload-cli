@@ -12,7 +12,7 @@ parameters:
   default: '89cab48f24a22b8de0f15dbf0537ca59d0975a9becb27d1b'
 - name: zoneId
   type: string
-  default: 'default zone'
+  default: 'defaultzone'
 
 jobs:
 - job: RunLoadTest
