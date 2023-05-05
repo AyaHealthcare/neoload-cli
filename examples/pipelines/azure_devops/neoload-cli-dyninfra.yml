@@ -48,6 +48,8 @@ jobs:
         neoload test-settings ls
         neoload test-settings use vptest3
         
+        neoload project --path tests/neoload_projects/example_1/ upload vptest3
+        
         
   - task: Bash@3
     displayName: Run the NeoLoad test
