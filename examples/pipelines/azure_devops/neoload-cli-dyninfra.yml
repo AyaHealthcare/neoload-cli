@@ -39,7 +39,7 @@ jobs:
         neoload login --url ${{parameters.neoloadApiUrl}} ${{parameters.neoloadToken}}
         
         neoload status
-        neoload workspaces
+        neoload workspaces --help
         neoload test-settings --help
   - task: Bash@3
     displayName: Run the NeoLoad test
