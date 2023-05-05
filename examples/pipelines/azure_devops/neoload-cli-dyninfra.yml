@@ -36,10 +36,8 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        neoload login --url ${{parameters.neoloadApiUrl}} ${{parameters.neoloadToken}} \
-                test-settings --zone ${{parameters.zoneId}} --scenario NEXTGEN patch "MySpaceMay4" \
-                project --path tests/neoload_projects/example_1/ upload "MySpaceMay4"
-                
+        neoload login --url ${{parameters.neoloadApiUrl}} ${{parameters.neoloadToken}}
+        
         neoload status
         neoload workspaces
         neoload test-settings --help
