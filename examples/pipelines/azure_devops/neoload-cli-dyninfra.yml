@@ -40,12 +40,13 @@ jobs:
         
         neoload status
         neoload workspaces --help
-        
+             
         neoload workspaces ls
-        
+        neoload workspaces use "01_AyaNeoPerf_GUI" 
         neoload test-settings --help
         
         neoload test-settings ls
+        neoload test-settings use vptest3
         
         
   - task: Bash@3
