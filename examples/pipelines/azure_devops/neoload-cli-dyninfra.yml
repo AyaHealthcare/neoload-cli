@@ -39,6 +39,7 @@ jobs:
         neoload login --url ${{parameters.neoloadApiUrl}} ${{parameters.neoloadToken}}
         
         neoload status
+        neoload --help
         neoload workspaces --help
              
         neoload workspaces ls
