@@ -40,7 +40,14 @@ jobs:
         
         neoload status
         neoload workspaces --help
+        
+        neoload workspaces ls
+        
         neoload test-settings --help
+        
+        neoload test-settings ls
+        
+        
   - task: Bash@3
     displayName: Run the NeoLoad test
     continueOnError: true
