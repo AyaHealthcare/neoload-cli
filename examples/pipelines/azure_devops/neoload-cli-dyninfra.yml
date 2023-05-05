@@ -74,6 +74,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
+       neoload test-results --help
        neoload test-results --junit-file $(Common.TestResultsDirectory)/neoload-slas.xml junitsla
   - task: PublishTestResults@2
     inputs:
