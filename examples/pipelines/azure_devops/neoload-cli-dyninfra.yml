@@ -64,7 +64,9 @@ jobs:
                        --external-url "$(Build.BuildUri)" \
                        --external-url-label "Azure CI build $(Build.BuildNumber)" \
                        --description "Azure result description" \
-                       "MySpaceMay4"
+                       "vptest3"
+                       
+        
   - task: Bash@3
     displayName: Get the junit SLA report
     continueOnError: true
