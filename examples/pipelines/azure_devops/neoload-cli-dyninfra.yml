@@ -77,6 +77,8 @@ jobs:
        neoload report --help
        neoload test-results --help
        neoload test-results --junit-file $(Common.TestResultsDirectory)/neoload-slas.xml junitsla
+       neoload test-results --filter "project=MyProject;scenario=fullTest" ls
+       neoload test-results --filter "status=TERMINATED|qualityStatus=FAILED" ls
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
